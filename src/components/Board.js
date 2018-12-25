@@ -17,16 +17,18 @@ class Board extends React.Component {
     super(props);
     this.state = {
       squares: this.reset(),
+      generation: 0,
     };
     this.tick = this.tick.bind(this);
     this.reset = this.reset.bind(this);
   }
 
   reset() {
-    const size = 15;
+    const rows = 15;
+    const cols = 25;
     var newSquares = [];
-    for (var i = 0; i < size; i++) {
-      newSquares[i] = Array(size).fill(false);
+    for (var i = 0; i < rows; i++) {
+      newSquares[i] = Array(cols).fill(false);
     }
     return newSquares;
   }
@@ -46,7 +48,7 @@ class Board extends React.Component {
         }
       }
     }
-    this.setState({squares: newSquares});
+    this.setState({squares: newSquares, generation: this.state.generation + 1});
   }
 
   findAliveNeighbors(squares, row, col) {
@@ -65,11 +67,12 @@ class Board extends React.Component {
   }
 
   handleClick(row, col) {
-    //var newSquares = this.state.squares.map(arr => arr.slice());
     var newSquares = this.state.squares;
     newSquares[row][col] = !newSquares[row][col];
     this.setState({squares: newSquares});
   }
+
+
 
   renderSquare(row, col) {
     return (
@@ -94,14 +97,15 @@ class Board extends React.Component {
 
     return (
       <div>
-        <div className="status">{title}</div>
+        <div className="title">{title}</div>
+        <div className="generation"> Generation: {this.state.generation} </div>
         <span>
           <button className="settings-buttons" onClick={() => this.tick()}>
             Next
           </button>
         </span>
-        <span>
-          <button className="settings-buttons" onClick={() => this.setState({squares: this.reset()})}>
+        <span className="reset-button">
+          <button className="settings-buttons" onClick={() => this.setState({squares: this.reset(), generation: 0})}>
             Reset
           </button>
         </span>

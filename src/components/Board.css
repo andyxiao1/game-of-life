@@ -37,5 +37,14 @@ body {
   padding: 5px 5px;
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+.reset-button {
   margin-left: 10px;
+}
+
+.generation {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
