@@ -1,0 +1,41 @@
+body {
+  font: 30px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.cell {
+  background: lightgray;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.cell:focus {
+  outline: none;
+}
+
+.settings-buttons {
+  border: none;
+  padding: 5px 5px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
