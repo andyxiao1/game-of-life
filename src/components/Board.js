@@ -4,10 +4,9 @@ import "./Board.css";
 function Cell(props) {
   return (
     <button
-      className="cell"
+      className={props.value ? "alive-cell" : "dead-cell"}
       onClick={props.onClick}
     >
-      {props.value ? "O" : null}
     </button>
   );
 }
