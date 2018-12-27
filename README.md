@@ -1,4 +1,4 @@
-#Conway's Game of Life
+# Conway's Game of Life
 This is a quick react app I made that lets you mess around with Conway's game of life which simulates cellular automaton
 
 ## How it works
